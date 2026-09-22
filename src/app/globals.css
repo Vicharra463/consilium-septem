@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   CONSILIUM SEPTEM — Tailwind v4 Theme
+   ============================================================ */
+
+@theme {
+  --color-midnight: #0B1120;
+  --color-navy: #111827;
+  --color-navy-light: #1E293B;
+  --color-slate: #334155;
+  --color-graphite: #1A1F2E;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4B96A;
+  --color-gold-dark: #A68A3E;
+  --color-pearl: #F8F9FA;
+  --color-silver: #CBD5E1;
+  --color-ash: #94A3B8;
+  --color-stone: #64748B;
+  --color-surface: #0F1629;
+  --color-surface-elevated: #162032;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+:root {
+  --background: #0B1120;
+  --foreground: #F8F9FA;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #0B1120;
+  color: #F8F9FA;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   LENIS
+   ============================================================ */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0B1120; }
+::-webkit-scrollbar-thumb { background: #A68A3E; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C9A84C; }
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #F8F9FA;
+}
+
+/* ============================================================
+   CANVAS OVERLAY
+   ============================================================ */
+
+.canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.canvas-container canvas {
+  pointer-events: auto;
+}
