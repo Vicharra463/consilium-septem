@@ -9,6 +9,19 @@ export const siteConfig = {
     "Consilium Septem es un bufete de abogados conformado por un consejo de 7 expertos en diversas ramas del derecho, comprometidos con la excelencia y la defensa integral de nuestros clientes.",
   url: "https://consiliumseptem.com",
   founder: "Constituido por siete profesionales distinguidos",
+  /** Única fuente de verdad de la sede — la consumen Footer y /contacto. */
+  office: {
+    street: "Av. Sánchez Cerro 1245, Piso 4",
+    city: "Piura, Tierra de Cholos, Perú",
+    phone: "+51 (01) 765-4321",
+    phoneHref: "tel:+51017654321",
+    email: "contacto@consiliumseptem.com",
+    /**
+     * Embed de Google Maps (formato `output=embed`, sin API key).
+     * Cambiá `q=` para mover el pin; `z=` controla el zoom.
+     */
+    mapEmbedUrl: "https://www.google.com/maps?q=Piura%2C%20Per%C3%BA&z=13&output=embed",
+  },
 } as const;
 
 /* ============================================================

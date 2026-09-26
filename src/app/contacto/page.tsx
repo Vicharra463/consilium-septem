@@ -14,19 +14,19 @@ const CHANNELS = [
   {
     icon: LocationIcon,
     label: "Estudio",
-    lines: ["Av. Javier Prado Este 1234, Piso 12", "San Isidro, Lima, Perú"],
+    lines: [siteConfig.office.street, siteConfig.office.city],
   },
   {
     icon: PhoneIcon,
     label: "Teléfono",
-    lines: ["+51 (01) 765-4321"],
-    href: "tel:+51017654321",
+    lines: [siteConfig.office.phone],
+    href: siteConfig.office.phoneHref,
   },
   {
     icon: MailIcon,
     label: "Correo",
-    lines: ["contacto@consiliumseptem.com"],
-    href: "mailto:contacto@consiliumseptem.com",
+    lines: [siteConfig.office.email],
+    href: `mailto:${siteConfig.office.email}`,
   },
   {
     icon: ClockIcon,
@@ -111,6 +111,38 @@ export default function ContactoPage() {
             </div>
           </AnimatedSection>
         </div>
+
+        <AnimatedSection>
+          <div style={{ marginTop: "32px", borderRadius: "18px", overflow: "hidden", border: "1px solid rgba(201,168,76,0.1)", background: "rgba(11,17,32,0.85)" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px", padding: "20px 24px" }}>
+              <div>
+                <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "20px", fontWeight: 700, color: "#F8F9FA", margin: 0 }}>Dónde estamos</h2>
+                <p style={{ margin: "6px 0 0", fontSize: "14px", color: "#94A3B8" }}>{siteConfig.office.street} · {siteConfig.office.city}</p>
+              </div>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${siteConfig.office.street}, ${siteConfig.office.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cs-channel"
+                style={{ fontSize: "12px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: "#C9A84C", textDecoration: "none", border: "1px solid rgba(201,168,76,0.3)", borderRadius: 999, padding: "8px 18px", whiteSpace: "nowrap" }}
+              >
+                Cómo llegar
+              </a>
+            </div>
+            <div style={{ lineHeight: 0, borderTop: "1px solid rgba(201,168,76,0.1)" }}>
+              <iframe
+                title={`Mapa de ${siteConfig.name} — ${siteConfig.office.city}`}
+                src={siteConfig.office.mapEmbedUrl}
+                width="100%"
+                height={380}
+                style={{ border: 0, display: "block", filter: "grayscale(0.35) contrast(1.05)" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
 
       {/* Hover en CSS: esta página es un Server Component (exporta metadata)

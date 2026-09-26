@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ShieldCheckIcon, LocationIcon, PhoneIcon, MailIcon, ArrowRightIcon } from "@/components/ui/Icons";
+import { siteConfig } from "@/lib/site-data";
 
 const SERVICES = [
   { title: "Derecho Civil", href: "/servicios#civil" },
@@ -57,12 +58,25 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", marginBottom: "20px" }}>Contacto</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px", color: "#64748B", fontSize: "13px" }}>
-              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}><LocationIcon size={18} /><span style={{ lineHeight: 1.6 }}>Av. Javier Prado Este 1234, Piso 12<br />San Isidro, Lima, Perú</span></li>
-              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}><PhoneIcon size={18} /><span>+51 (01) 765-4321</span></li>
-              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}><MailIcon size={18} /><span>contacto@consiliumseptem.com</span></li>
+              <li style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}><LocationIcon size={18} /><span style={{ lineHeight: 1.6 }}>{siteConfig.office.street}<br />{siteConfig.office.city}</span></li>
+              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}><PhoneIcon size={18} /><span>{siteConfig.office.phone}</span></li>
+              <li style={{ display: "flex", alignItems: "center", gap: "10px" }}><MailIcon size={18} /><span>{siteConfig.office.email}</span></li>
             </ul>
+            <div style={{ marginTop: "18px", borderRadius: 10, overflow: "hidden", border: "1px solid rgba(201,168,76,0.12)", lineHeight: 0, maxWidth: 260 }}>
+              <iframe
+                title={`Ubicación de ${siteConfig.name} — ${siteConfig.office.city}`}
+                src={siteConfig.office.mapEmbedUrl}
+                width="100%"
+                height={140}
+                style={{ border: 0, display: "block", filter: "grayscale(0.35) contrast(1.05)" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
+
         <div style={{ paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.04)", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
           <p style={{ color: "#475569", fontSize: "12px" }}>© 2025 Consilium Septem. Todos los derechos reservados.</p>
           <div style={{ display: "flex", gap: "20px", fontSize: "12px", color: "#475569" }}>
