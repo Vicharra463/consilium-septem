@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { ScaleIcon, ShieldCheckIcon, BookIcon, BriefcaseIcon, TaxIcon, ChevronRightIcon, ArrowRightIcon } from "@/components/ui/Icons";
@@ -133,7 +134,7 @@ export default function ServiciosPage() {
           <div style={{ marginTop: "64px", padding: "clamp(32px, 5vw, 56px)", borderRadius: "16px", background: "rgba(11, 17, 32, 0.85)", backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.08)", textAlign: "center" }}>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(20px, 3vw, 28px)", fontWeight: 700, color: "#F8F9FA", marginBottom: "12px" }}>¿Necesita Asesoría Legal?</h3>
             <p style={{ color: "#64748B", marginBottom: "28px", fontSize: "15px" }}>Contáctenos para una consulta confidencial sin compromiso.</p>
-            <a href="#contacto" style={{
+            <Link href="/contacto" style={{
               display: "inline-flex", alignItems: "center", gap: "8px",
               padding: "14px 28px", fontSize: "14px", fontWeight: 600,
               background: "#C9A84C", color: "#0B1120", borderRadius: "10px",
@@ -141,7 +142,7 @@ export default function ServiciosPage() {
             }}>
               Solicitar Consulta
               <ArrowRightIcon size={16} />
-            </a>
+            </Link>
           </div>
         </AnimatedSection>
       </div>

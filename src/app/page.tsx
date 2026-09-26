@@ -7,6 +7,7 @@ import ProcessTimeline from "@/components/sections/ProcessTimeline";
 import Testimonials from "@/components/sections/Testimonials";
 import FirmValues from "@/components/sections/FirmValues";
 import TeamPreview from "@/components/sections/TeamPreview";
+import SuccessCasePreview from "@/components/sections/SuccessCasePreview";
 import CTASection from "@/components/sections/CTASection";
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Testimonials />
       <FirmValues />
       <TeamPreview />
+      <SuccessCasePreview />
       <CTASection />
     </>
   );

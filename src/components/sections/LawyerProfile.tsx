@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeftIcon, ArrowRightIcon, GradIcon, MailIcon, CalendarIcon } from "@/components/ui/Icons";
 import { TeamMember } from "@/lib/site-data";
@@ -18,15 +19,16 @@ export default function LawyerProfile({ member, prevMember, nextMember }: Lawyer
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "48px", marginBottom: "64px" }} className="profile-grid">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-            <div style={{ aspectRatio: "3/4", borderRadius: "16px", overflow: "hidden", background: "linear-gradient(135deg, #1E293B, #1A1F2E)", border: "1px solid rgba(201,168,76,0.08)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-              <div style={{ position: "absolute", top: 20, right: 20, width: 60, height: 60, borderRadius: "50%", border: "1px solid rgba(201,168,76,0.06)" }} />
-              <div style={{ position: "absolute", bottom: 30, left: 15, width: 40, height: 40, borderRadius: "8px", border: "1px solid rgba(201,168,76,0.05)", transform: "rotate(20deg)" }} />
-              <div style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
-                <div style={{ width: 88, height: 88, borderRadius: "50%", background: "rgba(201,168,76,0.08)", border: "2px solid rgba(201,168,76,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
-                  <span style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "38px", color: "#C9A84C" }}>{member.name.split(" ").pop()?.[0]}</span>
-                </div>
-                <span style={{ fontSize: "12px", color: "#64748B" }}>{member.specialty}</span>
-              </div>
+            <div style={{ aspectRatio: "3/4", borderRadius: "16px", overflow: "hidden", background: "linear-gradient(135deg, #1E293B, #1A1F2E)", border: "1px solid rgba(201,168,76,0.08)", position: "relative" }}>
+              <Image
+                src={member.image}
+                alt={`${member.name}, ${member.role} de Consilium Septem`}
+                fill
+                sizes="(max-width: 768px) 100vw, 300px"
+                style={{ objectFit: "cover", objectPosition: "center 15%" }}
+              />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(11,17,32,0.85) 0%, rgba(11,17,32,0) 40%)", pointerEvents: "none" }} />
+              <span style={{ position: "absolute", bottom: 18, left: 18, right: 18, fontSize: "13px", color: "#CBD5E1", pointerEvents: "none" }}>{member.specialty}</span>
             </div>
           </motion.div>
 
@@ -50,9 +52,9 @@ export default function LawyerProfile({ member, prevMember, nextMember }: Lawyer
             </ul>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-              <a href="#contacto" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", fontSize: "14px", fontWeight: 600, background: "#C9A84C", color: "#0B1120", borderRadius: "10px", textDecoration: "none" }}>
+              <Link href="/contacto" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", fontSize: "14px", fontWeight: 600, background: "#C9A84C", color: "#0B1120", borderRadius: "10px", textDecoration: "none" }}>
                 <CalendarIcon size={16} />Agendar Consulta
-              </a>
+              </Link>
               <a href={`mailto:${member.email}`} style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", fontSize: "14px", fontWeight: 500, background: "transparent", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.3)", borderRadius: "10px", textDecoration: "none" }}>
                 <MailIcon size={16} />{member.email}
               </a>

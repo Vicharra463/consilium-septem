@@ -47,7 +47,7 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", marginBottom: "20px" }}>Firma</h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
-              {[{ l: "Inicio", h: "/" }, { l: "Servicios", h: "/servicios" }, { l: "Equipo", h: "/equipo" }].map((item) => (
+              {[{ l: "Inicio", h: "/" }, { l: "Servicios", h: "/servicios" }, { l: "Equipo", h: "/equipo" }, { l: "Casos de Éxito", h: "/casos-de-exito" }, { l: "Contacto", h: "/contacto" }].map((item) => (
                 <li key={item.h}><Link href={item.h} style={{ color: "#64748B", fontSize: "13px", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", transition: "color 0.3s" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#CBD5E1")} onMouseLeave={(e) => (e.currentTarget.style.color = "#64748B")}
                 ><ArrowRightIcon size={10} />{item.l}</Link></li>

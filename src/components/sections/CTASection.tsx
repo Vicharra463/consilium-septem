@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function CTASection() {
@@ -18,7 +19,7 @@ export default function CTASection() {
             Contáctenos para una consulta confidencial. Evaluaremos su caso y diseñaremos la mejor estrategia legal.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "12px", marginBottom: "40px" }}>
-            <a href="#contacto" style={{
+            <Link href="/contacto" style={{
               display: "inline-flex", alignItems: "center", gap: "8px",
               padding: "14px 28px", fontSize: "14px", fontWeight: 600,
               background: "#C9A84C", color: "#0B1120", borderRadius: "10px",
@@ -26,7 +27,7 @@ export default function CTASection() {
             }}>
               Solicitar Consulta
               <svg style={{ width: 16, height: 16 }} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+            </Link>
             <a href="tel:+5117654321" style={{
               display: "inline-flex", alignItems: "center", gap: "8px",
               padding: "14px 28px", fontSize: "14px", fontWeight: 500,

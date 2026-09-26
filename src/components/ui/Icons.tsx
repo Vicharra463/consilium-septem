@@ -243,3 +243,28 @@ export function TrophyIcon({ size = 24, color = "#C9A84C" }: IconProps) {
     </svg>
   );
 }
+
+/* CHECK — Confirmation / success */
+export function CheckIcon({ size = 24, color = "#C9A84C" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="12" fill={color} fillOpacity="0.08" stroke={color} strokeWidth="1" />
+      <circle cx="16" cy="16" r="9.5" stroke={color} strokeWidth="0.6" strokeDasharray="1.8 1.8" opacity="0.45" />
+      <path d="M10.5 16.5L14 20L21.5 12.5" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/* CLOCK — Business hours */
+export function ClockIcon({ size = 24, color = "#C9A84C" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="11" fill={color} fillOpacity="0.07" stroke={color} strokeWidth="1" />
+      <circle cx="16" cy="16" r="8.5" stroke={color} strokeWidth="0.6" strokeDasharray="1.8 1.8" opacity="0.4" />
+      <path d="M16 9.5V16L20 18.5" stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="16" cy="16" r="1.4" fill={color} />
+      <path d="M16 3.5V5.5" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M16 26.5V28.5" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
+    </svg>
+  );
+}

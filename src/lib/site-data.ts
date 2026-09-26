@@ -35,7 +35,8 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   { label: "Equipo", href: "/equipo" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Casos de Éxito", href: "/casos-de-exito" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 /* ============================================================
@@ -141,7 +142,9 @@ export const services: Service[] = [
 ];
 
 /* ============================================================
-   TEAM MEMBERS
+   TEAM MEMBERS — única fuente de verdad.
+   Home (TeamPreview), /equipo y /equipo/[slug] consumen ESTA lista.
+   Formación: todos los integrantes egresados de la Universidad César Vallejo.
    ============================================================ */
 
 export interface TeamMember {
@@ -160,128 +163,128 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "Dr. Carlos Mendoza",
-    slug: "dr-carlos-mendoza",
-    role: "Socio Fundador",
-    specialty: "Derecho Civil y Contractual",
-    image: "/images/equipe/carlos-mendoza.jpg",
+    name: "Dra. Zuleyka Gómez Córdova",
+    slug: "dra-zuleyka-gomez-cordova",
+    role: "Socia Fundadora",
+    specialty: "Derecho Laboral y Seguridad Social",
+    image: "/images/zuleyka-gomez-cordova.jpg",
     shortBio:
-      "Fundador de Consilium Septem con más de 25 años de trayectoria en derecho civil y contractual.",
+      "Fundadora de Consilium Septem y experta en seguridad social y compliance laboral preventivo.",
     fullBio:
-      "El Dr. Carlos Mendoza es el fundador y socio director de Consilium Septem. Con más de 25 años de experiencia en el ejercicio del derecho civil y contractual, ha liderado algunos de los casos más emblemáticos de la jurisprudencia nacional. Graduado con honors de la Facultad de Derecho de la Universidad Nacional, complementó su formación con estudios de posgrado en Derecho Contractual en la Universidad de Cambridge. Su visión estratégica y compromiso con la excelencia han posicionado a Consilium Septem como una de las firmas de abogados más prestigiosas del país.",
+      "La Dra. Zuleyka Gómez Córdova es fundadora y socia directora de Consilium Septem. Desde la constitución de la firma apostó por un modelo de trabajo preventivo: revisar contratos y políticas internas antes de que nazca el conflicto, en lugar de tener que litigarlo después. Con más de 10 años de ejercicio profesional se ha especializado en seguridad social, régimen de salud y pensiones, así como en la adecuación normativa de los procesos de gestión del talento humano. Su enfoque proactivo ha permitido a varias organizaciones reducir contingencias laborales y ordenar sus procesos internos. Es conferencista frecuente sobre actualizaciones legislativas en materia laboral y seguridad social.",
     education: [
-      "Doctor en Derecho - Universidad Nacional",
-      "LL.M. Derecho Contractual - University of Cambridge",
-      "Mediador Certificado - Centro de Mediación Internacional",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho Laboral y Seguridad Social — Universidad César Vallejo",
+      "Diplomado en Compliance Laboral — Universidad César Vallejo",
     ],
-    email: "c.mendoza@consiliumseptem.com",
+    email: "z.gomez@consiliumseptem.com",
   },
   {
     id: "2",
-    name: "Dra. Ana Villareal",
-    slug: "dr-ana-villareal",
-    role: "Socia Directora",
+    name: "Dr. Joseph Arturo Román Melgar",
+    slug: "dr-joseph-roman-melgar",
+    role: "Socio Director",
     specialty: "Derecho Penal y Criminalístico",
-    image: "/images/equipe/ana-villareal.jpg",
+    image: "/images/joseph-roman-melgar.jpg",
     shortBio:
-      "Especialista en derecho penal con reconocida trayectoria en defensa de casos de alta complejidad.",
+      "Especialista en defensa penal con amplia experiencia en casos de alta complejidad.",
     fullBio:
-      "La Dra. Ana Villareal es socia directora y jefa del departamento de derecho penal de Consilium Septem. Con una trayectoria de más de 20 años en la defensa penal, ha representado exitosamente a clientes en casos de gran repercusión mediática. Es reconocida por su rigor técnico, su capacidad de análisis y su habilidad para construir estrategias de defensa sólidas. Posee un doctorado en Ciencias Penales y es profesora invitada en múltiples instituciones académicas.",
+      "El Dr. Joseph Arturo Román Melgar es socio director del departamento de derecho penal de Consilium Septem. Cuenta con más de 20 años de trayectoria en la defensa de clientes dentro de procesos penales de distinta índole, incluyendo delitos económicos, contra la propiedad y delitos en el ámbito corporativo. Se desempeñó como abogado litigante en uno de los estudios penalistas más exigentes de Lima antes de incorporarse a la firma. Es reconocido por su preparación meticulosa de la estrategia probatoria, su dominio de la audiencia oral y por un trato cercano y estrictamente confidencial con cada cliente durante todo el procedimiento.",
     education: [
-      "Doctora en Ciencias Penales - Universidad Complutense",
-      "Especialización en Criminalística - Instituto Nacional de Criminalística",
-      "Certificación en Derecho Penal Internacional - La Haya",
+      "Doctor en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho Penal — Universidad César Vallejo",
+      "Diplomado en Criminología y Criminalística — Universidad César Vallejo",
     ],
-    email: "a.villareal@consiliumseptem.com",
+    email: "j.roman@consiliumseptem.com",
   },
   {
     id: "3",
-    name: "Dr. Ricardo Torres",
-    slug: "dr-ricardo-torres",
-    role: "Socio",
+    name: "Dra. Daniela Mercedes García Anastacio",
+    slug: "dra-daniela-garcia-anastacio",
+    role: "Socia",
     specialty: "Derecho Constitucional",
-    image: "/images/equipe/ricardo-torres.jpg",
+    image: "/images/daniela-garcia-anastacio.jpg",
     shortBio:
-      "Experto en derecho constitucional con amplia experiencia en acciones de tutela y derechos fundamentales.",
+      "Experta en derecho constitucional y protección de derechos fundamentales.",
     fullBio:
-      "El Dr. Ricardo Torres es socio del departamento de derecho constitucional de Consilium Septem. Con más de 18 años de experiencia, ha participado en la tramitación de miles de acciones de tutela, habeas corpus y acciones de inconstitucionalidad. Su trabajo ha sido determinante en la protección de derechos fundamentales de personas vulnerables y ha contribuido al desarrollo de la jurisprudencia constitucional del país. Es autor de numerous publicaciones académicas sobre derechos fundamentales.",
+      "La Dra. Daniela Mercedes García Anastacio es socia del departamento de derecho constitucional de Consilium Septem. A lo largo de 18 años de ejercicio, ha intervenido en la interposición y seguimiento de acciones de amparo, habeas corpus y habeas data, así como en procesos de control de constitucionalidad. Su trabajo se ha centrado en la protección efectiva de derechos fundamentales de personas vulnerables y de organizaciones de la sociedad civil. Ha participado en programas de fortalecimiento institucional y es autora de artículos sobre la evolución de la jurisprudencia constitucional.",
     education: [
-      "Doctor en Derecho Constitucional - Universidad de Buenos Aires",
-      "LL.M. Derechos Humanos - Universidad de Oxford",
-      "Profesor de Derecho Constitucional - Facultad de Derecho",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho Constitucional — Universidad César Vallejo",
+      "Diplomado en Derechos Humanos — Universidad César Vallejo",
     ],
-    email: "r.torres@consiliumseptem.com",
+    email: "d.garcia@consiliumseptem.com",
   },
   {
     id: "4",
-    name: "Dra. María Estrada",
-    slug: "dr-maria-estrada",
+    name: "Dra. María Fernanda Requena Mondragón",
+    slug: "dra-maria-fernanda-requena-mondragon",
     role: "Socia",
     specialty: "Derecho Laboral",
-    image: "/images/equipe/maria-estrada.jpg",
+    image: "/images/maria-fernanda-requena-mondragon.jpg",
     shortBio:
-      "Referente en derecho laboral, asesorando tanto a grandes empresas como a trabajadores y sindicatos.",
+      "Referente en derecho laboral: asesora a empresas, trabajadores y organizaciones sindicales.",
     fullBio:
-      "La Dra. María Estrada es socia y directora del departamento de derecho laboral de Consilium Septem. Con 15 años de experiencia, ha desarrollado una visión integral del derecho del trabajo que le permite asesorar eficazmente tanto a empleadores como a trabajadores. Ha liderado la negociación de importantes convenios colectivos y ha representado a clientes en los conflictos laborales más relevantes de la última década. Es autora de artículos especializados y conferencista frecuente sobre legislación laboral.",
+      "La Dra. María Fernanda Requena Mondragón es socia y directora del departamento de derecho laboral de Consilium Septem. Con 16 años de experiencia, ha asesorado a empresas nacionales y multinacionales en la estructuración de relaciones laborales, políticas de recursos humanos y negociación de convenios colectivos. En el ámbito contencioso ha representado a clientes en demandas por despido arbitrario, beneficios sociales y accidentes de trabajo. Combina un enfoque preventivo —orientado a reducir contingencias antes de que nazca el conflicto— con una sólida experiencia litigante ante los poderes jurisdiccionales.",
     education: [
-      "Doctora en Derecho del Trabajo - Universidad de Chile",
-      "Especialización en Negociación Colectiva - ILO Ginebra",
-      "Máster en Relaciones Laborales - IE Business School",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho del Trabajo y Seguridad Social — Universidad César Vallejo",
+      "Diplomado en Negociación Colectiva — Universidad César Vallejo",
     ],
-    email: "m.estrada@consiliumseptem.com",
+    email: "m.requena@consiliumseptem.com",
   },
   {
     id: "5",
-    name: "Dr. Javier Contreras",
-    slug: "dr-javier-contreras",
-    role: "Socio",
+    name: "Dra. Priscila Alejandra Huamán Román",
+    slug: "dra-priscila-huaman-roman",
+    role: "Socia",
     specialty: "Derecho Tributario",
-    image: "/images/equipe/javier-contreras.jpg",
+    image: "/images/priscila-huaman-roman.jpg",
     shortBio:
-      "Especialista en derecho tributario con amplia experiencia en planificación fiscal y litigios ante la administración.",
+      "Especialista en planificación fiscal y defensa ante la administración tributaria.",
     fullBio:
-      "El Dr. Javier Contreras es socio del departamento de derecho tributario de Consilium Septem. Con más de 16 años de experiencia, ha asesorado a empresas nacionales e internacionales en la optimización de su estructura fiscal y en la defensa frente a procedimientos de auditoría. Su profundo conocimiento del régimen tributario y su capacidad para anticipar cambios legislativos lo convierten en un asesor estratégico invaluable para los clientes de la firma.",
+      "La Dra. Priscila Alejandra Huamán Román es socia del departamento de derecho tributario de Consilium Septem. Con 14 años de experiencia, ha acompañado a empresas del retail, minería y servicios en la optimización de su estructura fiscal dentro estrictamente del marco legal, así como en la defensa frente a fiscalizaciones y resoluciones de primera y segunda instancia. Domina el procedimiento contencioso tributario y acompaña al cliente desde la etapa administrativa hasta el proceso judicial. Es conferencista habitual sobre reformas tributarias y su impacto en la operatoria de las empresas.",
     education: [
-      "Doctor en Derecho Tributario - Universidad del Rosario",
-      "Especialización en Fiscalidad Internacional - ESADE",
-      "Certificación en Transfer Pricing - OCDE",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Tributación — Universidad César Vallejo",
+      "Diplomado en Fiscalidad Internacional — Universidad César Vallejo",
     ],
-    email: "j.contreras@consiliumseptem.com",
+    email: "p.huaman@consiliumseptem.com",
   },
   {
     id: "6",
-    name: "Dra. Lucía Herrera",
-    slug: "dr-lucia-herrera",
+    name: "Dra. Yadhira Elizabeth Chávez Ipanaque",
+    slug: "dra-yadhira-chavez-ipanaque",
     role: "Socia Asociada",
     specialty: "Derecho Civil y Familia",
-    image: "/images/equipe/lucia-herrera.jpg",
+    image: "/images/yadhira-chavez-ipanaque.jpg",
     shortBio:
       "Especialista en derecho de familia y sucesiones, con enfoque en mediación y resolución pacífica de conflictos.",
     fullBio:
-      "La Dra. Lucía Herrera es socia asociada del departamento de derecho civil de Consilium Septem. Con 12 años de experiencia, se ha especializado en derecho de familia y sucesiones, destacándose por su enfoque humanizado y su capacidad para encontrar soluciones que preserven las relaciones familiares. Es certificada en mediación familiar y ha resuelto exitosamente cientos de conflictos sucesorios y familiares, priorizando siempre el bienestar de las partes involucradas.",
+      "La Dra. Yadhira Elizabeth Chávez Ipanaque es socia asociada del departamento de derecho civil de Consilium Septem. Con 12 años de experiencia se ha especializado en derecho de familia, régimen de visitas, alimentos y procesos sucesorios, así como en la división y partición de bienes. Destaca por su enfoque humanizado y por su capacidad de construir acuerdos que preservan las relaciones familiares cuando ello es posible. Está certificada en mediación familiar y ha conducido exitosamente cientos de audiencias de conciliación, priorizando siempre el interés superior de las partes involucradas.",
     education: [
-      "Doctora en Derecho Civil - Universidad Javeriana",
-      "Especialización en Derecho de Familia - Universidad de Barcelona",
-      "Certificación en Mediación Familiar - Centro de Mediación",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho de Familia — Universidad César Vallejo",
+      "Certificación en Mediación Familiar — Universidad César Vallejo",
     ],
-    email: "l.herrera@consiliumseptem.com",
+    email: "y.chavez@consiliumseptem.com",
   },
   {
     id: "7",
-    name: "Dr. Diego Salazar",
-    slug: "dr-diego-salazar",
-    role: "Socio Asociado",
-    specialty: "Derecho Laboral y Seguridad Social",
-    image: "/images/equipe/diego-salazar.jpg",
+    name: "Dra. Yaselinne Cruz Farceque",
+    slug: "dra-yaselinne-cruz-farceque",
+    role: "Socia Asociada",
+    specialty: "Derecho Civil y Contractual",
+    image: "/images/yaselinne-cruz-farceque.jpg",
     shortBio:
-      "Experto en seguridad social y derecho laboral preventivo, asesorando a empresas en compliance laboral.",
+      "Especialista en derecho civil y contractual con más de 25 años de trayectoria.",
     fullBio:
-      "El Dr. Diego Salazar es socio asociado del departamento de derecho laboral de Consilium Septem. Con 10 años de experiencia, se ha especializado en el asesoramiento preventivo a empresas en materia de compliance laboral, seguridad social y políticas de recursos humanos. Su enfoque proactivo ha ayudado a numerosas organizaciones a evitar conflictos laborales y a optimizar sus procesos de gestión del talento humano. Es conferencista frecuente sobre legislación laboral y seguridad social.",
+      "La Dra. Yaselinne Cruz Farceque es socia asociada del departamento de derecho civil de Consilium Septem. Con más de 25 años de ejercicio profesional, ha liderado la resolución de controversias contractuales de alta complejidad y ha asesorado a empresas familiares e inversionistas en la estructuración de sus operaciones. Graduada con honores de la Universidad César Vallejo, complementó su formación con estudios de posgrado en la misma casa de estudios. En la firma atiende los asuntos civiles de mayor calado técnico, donde su experiencia en el análisis de contratos y en la construcción de la estrategia probatoria resulta determinante.",
     education: [
-      "Doctor en Derecho Laboral - Universidad de los Andes",
-      "Especialización en Compliance Laboral - IESE Business School",
-      "Certificación en Seguridad Social - Universidad de Sevilla",
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho Contractual y Mercantil — Universidad César Vallejo",
+      "Certificación en Mediación y Arbitraje — Universidad César Vallejo",
     ],
-    email: "d.salazar@consiliumseptem.com",
+    email: "y.cruz@consiliumseptem.com",
   },
 ];

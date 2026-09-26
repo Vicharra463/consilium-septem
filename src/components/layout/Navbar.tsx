@@ -10,8 +10,19 @@ const NAV_ITEMS = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/servicios" },
   { label: "Equipo", href: "/equipo" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Casos", href: "/casos-de-exito" },
+  { label: "Contacto", href: "/contacto" },
 ];
+
+/** Resuelve el ítem activo.
+ *  Los anclajes (#) nunca se evalúan contra el pathname: en "/" quedarían
+ *  encendidos junto a "Inicio" y habría dos ítems activos a la vez.
+ *  Las rutas hijas iluminan a su ítem padre: /equipo/[slug] → "Equipo". */
+function isNavActive(pathname: string, href: string): boolean {
+  if (href.startsWith("#")) return false;
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +35,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setIsMobileOpen(false); }, [pathname]);
+  // Ajuste de estado durante el render (patrón recomendado por React): al cambiar
+  // de ruta se cierra el menú móvil sin disparar un cascading render vía effect.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setIsMobileOpen(false);
+  }
 
   return (
     <>
@@ -53,7 +70,7 @@ export default function Navbar() {
 
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }} className="hidden lg:flex">
             {NAV_ITEMS.map((item) => {
-              const isActive = pathname === item.href || (item.href === "#contacto" && pathname === "/");
+              const isActive = isNavActive(pathname, item.href);
               return (
                 <Link key={item.href} href={item.href} style={{
                   padding: "8px 16px", fontSize: "13px", fontWeight: 500, letterSpacing: "0.03em",
@@ -73,14 +90,14 @@ export default function Navbar() {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <a href="#contacto" className="hidden md:inline-flex" style={{
+            <Link href="/contacto" className="hidden md:inline-flex" style={{
               padding: "10px 22px", fontSize: "12px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const,
               color: "#C9A84C", border: "1px solid rgba(201,168,76,0.3)", borderRadius: "8px", background: "rgba(201,168,76,0.06)",
               textDecoration: "none", display: "flex", alignItems: "center", gap: "6px", transition: "all 0.3s",
             }}
               onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(201,168,76,0.12)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(201,168,76,0.06)"; }}
-            >Contactar <ChevronRightIcon size={12} /></a>
+            >Contactar <ChevronRightIcon size={12} /></Link>
 
             <button onClick={() => setIsMobileOpen(!isMobileOpen)} className="lg:hidden" style={{
               display: "flex", alignItems: "center", justifyContent: "center", width: 40, height: 40,
@@ -101,7 +118,7 @@ export default function Navbar() {
             >
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {NAV_ITEMS.map((item) => {
-                  const isActive = pathname === item.href || (item.href === "#contacto" && pathname === "/");
+                  const isActive = isNavActive(pathname, item.href);
                   return (
                     <Link key={item.href} href={item.href} style={{
                       padding: "14px 12px", fontSize: "16px", fontWeight: 500,
