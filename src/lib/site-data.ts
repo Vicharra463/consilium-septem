@@ -11,16 +11,21 @@ export const siteConfig = {
   founder: "Constituido por siete profesionales distinguidos",
   /** Única fuente de verdad de la sede — la consumen Footer y /contacto. */
   office: {
-    street: "Av. Sánchez Cerro 1245, Piso 4",
-    city: "Piura, Tierra de Cholos, Perú",
+    /**
+     * Dirección de referencia tomada de un estudio jurídico real de Piura
+     * (Estudio Jurídico Santana Burgos S.R.L.). Reemplazar por la sede
+     * definitiva de la firma antes de poner el sitio en producción.
+     */
+    street: "Av. Loreto 539",
+    city: "Piura 20001, Perú",
     phone: "+51 (01) 765-4321",
     phoneHref: "tel:+51017654321",
     email: "contacto@consiliumseptem.com",
     /**
      * Embed de Google Maps (formato `output=embed`, sin API key).
-     * Cambiá `q=` para mover el pin; `z=` controla el zoom.
+     * Cambie `q=` para mover el pin; `z=` controla el zoom.
      */
-    mapEmbedUrl: "https://www.google.com/maps?q=Piura%2C%20Per%C3%BA&z=13&output=embed",
+    mapEmbedUrl: "https://www.google.com/maps?q=Av.%20Loreto%20539%2C%20Piura%2C%20Per%C3%BA&z=16&output=embed",
   },
 } as const;
 
@@ -194,6 +199,24 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "2",
+    name: "Dra. Yaselinne Cruz Farceque",
+    slug: "dra-yaselinne-cruz-farceque",
+    role: "Socia Asociada",
+    specialty: "Derecho Civil y Contractual",
+    image: "/images/yaselinne-cruz-farceque.jpg",
+    shortBio:
+      "Especialista en derecho civil y contractual con más de 25 años de trayectoria.",
+    fullBio:
+      "La Dra. Yaselinne Cruz Farceque es socia asociada del departamento de derecho civil de Consilium Septem. Con más de 25 años de ejercicio profesional, ha liderado la resolución de controversias contractuales de alta complejidad y ha asesorado a empresas familiares e inversionistas en la estructuración de sus operaciones. Graduada con honores de la Universidad César Vallejo, complementó su formación con estudios de posgrado en la misma casa de estudios. En la firma atiende los asuntos civiles de mayor calado técnico, donde su experiencia en el análisis de contratos y en la construcción de la estrategia probatoria resulta determinante.",
+    education: [
+      "Doctora en Derecho — Universidad César Vallejo",
+      "Maestría en Derecho Contractual y Mercantil — Universidad César Vallejo",
+      "Certificación en Mediación y Arbitraje — Universidad César Vallejo",
+    ],
+    email: "y.cruz@consiliumseptem.com",
+  },
+  {
+    id: "3",
     name: "Dr. Joseph Arturo Román Melgar",
     slug: "dr-joseph-roman-melgar",
     role: "Socio Director",
@@ -211,7 +234,7 @@ export const teamMembers: TeamMember[] = [
     email: "j.roman@consiliumseptem.com",
   },
   {
-    id: "3",
+    id: "4",
     name: "Dra. Daniela Mercedes García Anastacio",
     slug: "dra-daniela-garcia-anastacio",
     role: "Socia",
@@ -229,7 +252,7 @@ export const teamMembers: TeamMember[] = [
     email: "d.garcia@consiliumseptem.com",
   },
   {
-    id: "4",
+    id: "5",
     name: "Dra. María Fernanda Requena Mondragón",
     slug: "dra-maria-fernanda-requena-mondragon",
     role: "Socia",
@@ -247,7 +270,7 @@ export const teamMembers: TeamMember[] = [
     email: "m.requena@consiliumseptem.com",
   },
   {
-    id: "5",
+    id: "6",
     name: "Dra. Priscila Alejandra Huamán Román",
     slug: "dra-priscila-huaman-roman",
     role: "Socia",
@@ -265,7 +288,7 @@ export const teamMembers: TeamMember[] = [
     email: "p.huaman@consiliumseptem.com",
   },
   {
-    id: "6",
+    id: "7",
     name: "Dra. Yadhira Elizabeth Chávez Ipanaque",
     slug: "dra-yadhira-chavez-ipanaque",
     role: "Socia Asociada",
@@ -281,23 +304,5 @@ export const teamMembers: TeamMember[] = [
       "Certificación en Mediación Familiar — Universidad César Vallejo",
     ],
     email: "y.chavez@consiliumseptem.com",
-  },
-  {
-    id: "7",
-    name: "Dra. Yaselinne Cruz Farceque",
-    slug: "dra-yaselinne-cruz-farceque",
-    role: "Socia Asociada",
-    specialty: "Derecho Civil y Contractual",
-    image: "/images/yaselinne-cruz-farceque.jpg",
-    shortBio:
-      "Especialista en derecho civil y contractual con más de 25 años de trayectoria.",
-    fullBio:
-      "La Dra. Yaselinne Cruz Farceque es socia asociada del departamento de derecho civil de Consilium Septem. Con más de 25 años de ejercicio profesional, ha liderado la resolución de controversias contractuales de alta complejidad y ha asesorado a empresas familiares e inversionistas en la estructuración de sus operaciones. Graduada con honores de la Universidad César Vallejo, complementó su formación con estudios de posgrado en la misma casa de estudios. En la firma atiende los asuntos civiles de mayor calado técnico, donde su experiencia en el análisis de contratos y en la construcción de la estrategia probatoria resulta determinante.",
-    education: [
-      "Doctora en Derecho — Universidad César Vallejo",
-      "Maestría en Derecho Contractual y Mercantil — Universidad César Vallejo",
-      "Certificación en Mediación y Arbitraje — Universidad César Vallejo",
-    ],
-    email: "y.cruz@consiliumseptem.com",
   },
 ];

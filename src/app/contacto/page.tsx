@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Contacto — Consilium Septem",
   description:
-    "Ponete en contacto con Consilium Septem. Contanos tu caso y un integrante del consejo de 7 expertos te responderá a la brevedad.",
+    "Póngase en contacto con Consilium Septem. Cuéntenos su caso y un integrante del consejo de 7 expertos le responderá a la brevedad.",
 };
 
 const CHANNELS = [
@@ -45,11 +45,11 @@ export default function ContactoPage() {
               Consultas
             </span>
             <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", fontWeight: 700, marginBottom: "20px" }}>
-              <span style={{ color: "#F8F9FA" }}>Ponete en </span>
+              <span style={{ color: "#F8F9FA" }}>Póngase en </span>
               <span style={{ background: "linear-gradient(135deg, #C9A84C, #E8D48B, #A68A3E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Contacto</span>
             </h1>
             <p style={{ color: "#64748B", fontSize: "16px", maxWidth: 560, margin: "0 auto", lineHeight: 1.7 }}>
-              Contanos tu caso. Un integrante del consejo revisará tu consulta y te responderá a la brevedad.
+              Cuéntenos su caso. Un integrante del consejo revisará su consulta y le responderá a la brevedad.
             </p>
           </div>
         </AnimatedSection>
@@ -59,7 +59,7 @@ export default function ContactoPage() {
             <div style={{ borderRadius: "18px", background: "rgba(11,17,32,0.85)", backdropFilter: "blur(20px)", border: "1px solid rgba(201,168,76,0.08)", padding: "clamp(24px, 4vw, 40px)" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "26px" }}>
                 <CalendarIcon size={18} />
-                <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "22px", fontWeight: 700, color: "#F8F9FA" }}>Solicitá una consulta</h2>
+                <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "22px", fontWeight: 700, color: "#F8F9FA" }}>Solicite una consulta</h2>
               </div>
               <ContactForm />
             </div>

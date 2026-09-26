@@ -67,7 +67,7 @@ export default function HeroSection() {
             <motion.div variants={reveal} initial="hidden" animate="visible" custom={0}
               style={{ display: "inline-flex", alignItems: "center", gap: "10px", padding: "8px 20px", borderRadius: "999px", background: "rgba(11, 17, 32, 0.75)", backdropFilter: "blur(20px)", border: "1px solid rgba(201, 168, 76, 0.12)", marginBottom: "28px" }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9A84C", animation: "pulse 2s infinite" }} />
-              <span style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C" }}>Est. 2024 — Siete Expertos, Una Visión</span>
+              <span style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C" }}>Desde 2024 — Siete Expertos, Una Visión</span>
             </motion.div>
           </div>
 
@@ -93,7 +93,7 @@ export default function HeroSection() {
           <div ref={statsRef} style={{ display: "flex", gap: "36px" }}>
             {[
               { value: "7", label: "Expertos" },
-              { value: "50+", label: "Años Combined" },
+              { value: "50+", label: "Años de Experiencia" },
               { value: "500+", label: "Casos Ganados" },
             ].map((stat) => (
               <div key={stat.label} style={{ textAlign: "center" }}>
